@@ -56,7 +56,17 @@ add_executable(mlir_benchmark
 llvm_map_components_to_libnames(llvm_libs core support)
 target_link_libraries(mlir_benchmark
     ${llvm_libs}
-    MLIR
+    MLIRAffineDialect
+    MLIRMemRefDialect
+    MLIRArithDialect
+    MLIRSCFDialect
+    MLIRMemRefToLLVM
+    MLIRArithToLLVM
+    MLIRAffineToStandard
+    MLIRFuncToLLVM
+    MLIRSCFToControlFlow
+    MLIRControlFlowToLLVM
+    MLIRBuiltinToLLVMIRTranslation
     MLIRExecutionEngine
 )
 
